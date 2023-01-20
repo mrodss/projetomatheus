@@ -36,37 +36,26 @@
     <h1 style="text-align: center; margin-top: 30px;">CONCORRA A VAGAS DE EMPREGO!</h1>
 
 
-    <div class="container text-center" style="margin-top: 20px;">
-        <div class="row">
-            <div class="col" style="margin-left: 150px;">
-                <div class="card" style="width: 30rem;">
-                    <img src="https://www.place-hold.it/72x57&text=Job" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">JOB APPLICATION</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card" style="width: 30rem;">
-                    <img src="https://www.place-hold.it/72x57&text=Job" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">JOB APPLICATION</p>
-                    </div>
+    <div class="container text-center">
+        <div class=" row" style="margin-left: 425px;">
+            <div class="card" style="width: 30rem;">
+                <img src="https://www.place-hold.it/72x57&text=Job" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <strong class="card-text">JOB APPLICATION</strong>
+                    <h4>Cadastre seu currículo e tenha a chance de concorrer a vagas de programador. Não perca tempo!!!</h4>
                 </div>
             </div>
         </div>
-    </div>
 
-
-    <div>
-        <footer class="py-3 my-4">
-            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-                <li class="nav-item"><a href="./" class="nav-link px-2 text-muted">Home</a></li>
-                <li class="nav-item"><a href="sobre" class="nav-link px-2 text-muted">Sobre</a></li>
-            </ul>
-            <p class="text-center text-muted">&reg; 2022 JOB APPLICATION, Inc</p>
-        </footer>
-    </div>
+        <div>
+            <footer class="py-3 my-4">
+                <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                    <li class="nav-item"><a href="./" class="nav-link px-2 text-muted">Home</a></li>
+                    <li class="nav-item"><a href="sobre" class="nav-link px-2 text-muted">Sobre</a></li>
+                </ul>
+                <p class="text-center text-muted">&reg; 2022 JOB APPLICATION, Inc</p>
+            </footer>
+        </div>
 </body>
 
 </html>
