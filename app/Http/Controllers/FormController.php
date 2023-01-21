@@ -14,8 +14,8 @@ class FormController extends Controller
      */
     public function index()
     {
-        $quantidadeDeItensAExibir = 5;
-        $listaVagas = Form::latest()->paginate(5);
+        $quantidadeDeItensAExibir = 10;
+        $listaVagas = Form::latest()->paginate(10);
         return view('vaga/index', compact('listaVagas'))->with('i', (request()->input('page', 1) - 1) * $quantidadeDeItensAExibir);
     }
     /**

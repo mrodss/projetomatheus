@@ -57,7 +57,7 @@
                     <a class="btn btn-primary" style="color:white" href="{{ route('vaga.edit', $vaga->id) }}">Editar</a>
                     <form action="{{ route('vaga.destroy', $vaga->id) }}" method="POST"> @csrf @method('DELETE')<button
                             type="submit" style="background-color:red; color:white"
-                            class="btn brn-danger">Apagar</button></form>
+                            class="btn btn-danger">Apagar</button></form>
                 </td>
             </tr>
         @endforeach
