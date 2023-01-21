@@ -36,7 +36,7 @@
             </div>
         </div>
     </nav>
-    <form action="{{ route('vaga.update', $vaga->id) }}" method="POST">
+    <form action="{{ route('vaga.update', $vaga->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <div class="row">
@@ -157,6 +157,7 @@
                     <label for="campo-status" class="form-label">Arquivo:</label>
                     <input type="file" id="campo-status" name="arquivo" class="form-control"
                         value="{{ $vaga->arquivo }}">
+                    {{-- <img src="/arquivo/{{ $vaga->arquivo }}" width="300px"> --}}
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center" style="margin-top: 10px">

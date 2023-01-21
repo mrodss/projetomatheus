@@ -128,6 +128,8 @@ class FormController extends Controller
             $nameImage = date('YmdHis') . "." . $arquivo->getClientOriginalExtension();
             $arquivo->move($destinationPath, $nameImage);
             $input['arquivo'] = $nameImage;
+        } else {
+            unset($input['arquivo']);
         }
 
         $vaga->update($input);
