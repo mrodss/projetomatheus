@@ -99,7 +99,7 @@ class FormController extends Controller
      */
     public function update(Request $request, Form $vaga)
     {
-        $storeData = $request->validate(
+        $request->validate(
             [
                 'nome' => 'required|max:255',
                 'sobrenome' => 'required|max:255',
@@ -120,6 +120,8 @@ class FormController extends Controller
         );
 
         $input = $request->all();
+        // print_r($input);
+        // die();
 
         if ($arquivo = $request->file('arquivo')) {
             $destinationPath = 'arquivo/';
@@ -127,8 +129,6 @@ class FormController extends Controller
             $arquivo->move($destinationPath, $nameImage);
             $input['arquivo'] = $nameImage;
         }
-        // print_r($input);
-        // die();
 
         $vaga->update($input);
         return redirect('/vaga')->with('sucess', 'Vaga editada com sucesso');
