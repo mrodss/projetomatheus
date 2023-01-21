@@ -99,7 +99,7 @@ class FormController extends Controller
      */
     public function update(Request $request, Form $vaga)
     {
-        $storeData = $request->validate(
+        $request->validate(
             [
                 'nome' => 'required|max:255',
                 'sobrenome' => 'required|max:255',
@@ -130,8 +130,10 @@ class FormController extends Controller
         } else {
             unset($input['arquivo']);
         }
+        // print_r($input);
+        // die();
 
-        $vaga->update($storeData);
+        $vaga->update($input);
         return redirect('/vaga')->with('sucess', 'Vaga editada com sucesso');
     }
 
