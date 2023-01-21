@@ -153,15 +153,13 @@
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
                                     <strong>Arquivo:</strong>
-                                    {{-- PARA VISUALIZAR A IMAGEM E O NOME DO ARQUIVO --}}
-w                                    <a href="/arquivo/{{ $vaga->arquivo }}">
+                                    <a href="/arquivo/{{ $vaga->arquivo }}">
                                         {{ $vaga->arquivo }}
                                 </div>
                             </div>
                         </th>
                     </tr>
                 </table>
-
             </div>
         </div>
     </div>

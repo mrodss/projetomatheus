@@ -116,7 +116,7 @@ class FormController extends Controller
                 'number1' => 'required|max:255',
                 'number2' => 'required|max:255',
                 'data' => 'required|max:255',
-                'arquivo' => 'required'
+                // 'arquivo' => 'required'
             ]
         );
 

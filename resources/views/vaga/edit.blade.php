@@ -155,9 +155,8 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <label for="campo-status" class="form-label">Arquivo:</label>
-                    <input type="file" id="campo-status" name="arquivo" class="form-control">
-                        {{-- value="{{ $vaga->arquivo }}"> --}}
-                    <img src="/arquivo/ {{ $vaga->arquivo }}" width="300px">
+                    <input type="file" id="campo-status" name="arquivo" class="form-control"
+                        value="{{ $vaga->arquivo }}">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center" style="margin-top: 10px">
