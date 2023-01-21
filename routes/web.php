@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FormController;
-use App\Http\Controllers\UsuarioController;
+use App\Http\Controllers\CustomAuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,13 +23,16 @@ Route::get('/formulario', function () {
     return view('vaga/formulario');
 });
 
-Route::get('/login', function () {
-    return view('logar/login');
-});
-
 Route::get('/sobre', function () {
     return view('sobre');
 });
 
 Route::resource('vaga', FormController::class);
-Route::resource('logar', UsuarioController::class);
+Route::resource('auth', CustomAuthController::class);
+
+Route::get('dashboard', [CustomAuthController::class, 'dashboard']);
+Route::get('login', [CustomAuthController::class, 'index'])->name('login');
+Route::post('custom-login', [CustomAuthController::class, 'customLogin'])->name('login.custom');
+Route::get('registration', [CustomAuthController::class, 'registration'])->name('register-user');
+Route::post('custom-registration', [CustomAuthController::class, 'customRegistration'])->name('register.custom');
+Route::get('signout', [CustomAuthController::class, 'signOut'])->name('signout');
