@@ -37,7 +37,7 @@ class FormController extends Controller
      */
     public function store(Request $request)
     {
-        $storeData = $request->validate([
+        $request->validate([
             'nome' => 'required|max:255',
             'sobrenome' => 'required|max:255',
             'address' => 'required|max:255',
@@ -53,9 +53,19 @@ class FormController extends Controller
             'number1' => 'required|max:255',
             'number2' => 'required|max:255',
             'data' => 'required|max:255',
-            'arquivo' => 'required'
+            'arquivo' => 'required',
         ]);
-        $vaga = Form::create($storeData);
+
+        $input = $request->all();
+        if ($arquivo = $request->file('arquivo')) {
+            $destinationPath = 'arquivo/';
+            $nameImage = date('YmdHis') . "." . $arquivo->getClientOriginalExtension();
+            $arquivo->move($destinationPath, $nameImage);
+            $input['arquivo'] = $nameImage;
+        }
+        Form::create($input);
+
+        // $vaga = Form::create($storeData);
         return redirect('./')->with('Sucesso', 'Formulário salvo com sucesso');
     }
     /**
@@ -109,6 +119,18 @@ class FormController extends Controller
                 'arquivo' => 'required'
             ]
         );
+
+        $input = $request->all();
+
+        if ($arquivo = $request->file('arquivo')) {
+            $destinationPath = 'arquivo/';
+            $nameImage = date('YmdHis') . "." . $arquivo->getClientOriginalExtension();
+            $arquivo->move($destinationPath, $nameImage);
+            $input['arquivo'] = $nameImage;
+        } else {
+            unset($input['arquivo']);
+        }
+
         $vaga->update($storeData);
         return redirect('/vaga')->with('sucess', 'Vaga editada com sucesso');
     }
