@@ -5,14 +5,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>JOB APPLICATION | ENTRAR</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
 
 <body>
     <nav class="navbar navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand">
-                <img class="d-inline-block align-text-top" src="https://www.place-hold.it/72x57&text=Job" alt="" width="30" height="24">
+                <img class="d-inline-block align-text-top" src="https://www.place-hold.it/72x57&text=Job" alt=""
+                    width="30" height="24">
                 JOB APPLICATION
             </a>
 
@@ -24,7 +26,7 @@
     </nav>
 
     <h1 style="margin-top: 50px; text-align: center;">FAÇA O LOGIN!</h1>
-    <form action="{{route('logar.store')}}" method="post">
+    <form action="{{ route('logar.store') }}" method="post">
         @csrf
         <div class="container col-xl-10 col-xxl-8 px-4 py-5">
             <div class="row align-items-center g-lg-5 py-5">
@@ -35,7 +37,8 @@
                             <label for="usuario">Usuário</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="password" class="form-control" id="senha" name="senha" placeholder="Password">
+                            <input type="password" class="form-control" id="senha" name="senha"
+                                placeholder="Password">
                             <label for="senha">Senha</label>
                         </div>
                         <div class="checkbox mb-3">
