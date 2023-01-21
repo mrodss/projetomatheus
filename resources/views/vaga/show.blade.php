@@ -154,9 +154,8 @@
                                 <div class="form-group">
                                     <strong>Arquivo:</strong>
                                     {{-- PARA VISUALIZAR A IMAGEM E O NOME DO ARQUIVO --}}
-                                    {{-- <img src="/arquivo/{{ $vaga->arquivo }}" width="500px"> --}}
-                                    <a href="/arquivo/{{ $vaga->arquivo }}">
-                                    {{ $vaga->arquivo }}
+w                                    <a href="/arquivo/{{ $vaga->arquivo }}">
+                                        {{ $vaga->arquivo }}
                                 </div>
                             </div>
                         </th>
