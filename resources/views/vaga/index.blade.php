@@ -1,17 +1,5 @@
-<!doctype html>
-<html lang="pt-br">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>JOB APPLICATION | CURRÍCULOS CADASTRADOS</title>
-
-    <link href="css/app.css" rel="stylesheet" type="text/css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-</head>
-
-<body class="antialiased">
+@extends('auth/dashboard')
+@section('content')
     @if ($errors->any())
         <div class="alert alert-danger">
             <strong>Whoops!</strong> Ocorreram erros! <br><br>
@@ -52,12 +40,11 @@
                 <td>{{ $vaga->sobrenome }}</td>
                 <td>{{ $vaga->email }}</td>
                 <td>
-                    <a class="btn btn-info" style="color:white"
-                        href="{{ route('vaga.show', $vaga->id) }}">Visualizar</a>
+                    <a class="btn btn-info" style="color:white" href="{{ route('vaga.show', $vaga->id) }}">Visualizar</a>
                     <a class="btn btn-primary" style="color:white" href="{{ route('vaga.edit', $vaga->id) }}">Editar</a>
                     <form action="{{ route('vaga.destroy', $vaga->id) }}" method="POST"> @csrf @method('DELETE')<button
-                            type="submit" style="background-color:red; color:white"
-                            class="btn btn-danger">Apagar</button></form>
+                            type="submit" style="background-color:red; color:white" class="btn btn-danger">Apagar</button>
+                    </form>
                 </td>
             </tr>
         @endforeach
@@ -74,4 +61,4 @@
         </footer>
     </div>
 
-    <html>
+@endsection

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Form;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class FormController extends Controller
 {
@@ -14,9 +15,13 @@ class FormController extends Controller
      */
     public function index()
     {
-        $quantidadeDeItensAExibir = 10;
-        $listaVagas = Form::latest()->paginate(10);
-        return view('vaga/index', compact('listaVagas'))->with('i', (request()->input('page', 1) - 1) * $quantidadeDeItensAExibir);
+        if (Auth::check()) {
+            $quantidadeDeItensAExibir = 10;
+            $listaVagas = Form::latest()->paginate(10);
+            return view('vaga/index', compact('listaVagas'))->with('i', (request()->input('page', 1) - 1) * $quantidadeDeItensAExibir);
+        }
+
+        return redirect("login")->withSuccess('You are not allowed to access');
     }
     /**
      * Show the form for creating a new resource.
