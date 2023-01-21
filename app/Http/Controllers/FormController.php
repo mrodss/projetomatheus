@@ -99,7 +99,7 @@ class FormController extends Controller
      */
     public function update(Request $request, Form $vaga)
     {
-        $request->validate(
+        $storeData = $request->validate(
             [
                 'nome' => 'required|max:255',
                 'sobrenome' => 'required|max:255',
@@ -116,7 +116,6 @@ class FormController extends Controller
                 'number1' => 'required|max:255',
                 'number2' => 'required|max:255',
                 'data' => 'required|max:255',
-                // 'arquivo' => 'required'
             ]
         );
 
@@ -127,8 +126,6 @@ class FormController extends Controller
             $nameImage = date('YmdHis') . "." . $arquivo->getClientOriginalExtension();
             $arquivo->move($destinationPath, $nameImage);
             $input['arquivo'] = $nameImage;
-        } else {
-            unset($input['arquivo']);
         }
         // print_r($input);
         // die();
