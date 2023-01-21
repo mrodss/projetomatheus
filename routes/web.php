@@ -19,10 +19,6 @@ Route::get('/', function () {
     return view('index');
 });
 
-// Route::get('/', function () {
-//     return view('index');
-// });
-
 Route::get('/formulario', function () {
     return view('vaga/formulario');
 });
